@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/widget.jpg</file>
+        <file>style/stylesheet.qss</file>
+    </qresource>
+</RCC>
