@@ -1,5 +1,7 @@
 build/
 server/GateServer/.vs/
+server/GateServer/x64
+server/GateServer/GateServer/x64/
 
 *.ipch
 *.db
