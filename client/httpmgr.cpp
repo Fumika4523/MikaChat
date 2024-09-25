@@ -5,11 +5,17 @@ HttpMgr::~HttpMgr()
 
 }
 
-HttpMgr::HttpMgr() {}
+HttpMgr::HttpMgr()
+{
+    //连接http请求和完成信号
+    connect(this, &HttpMgr::sig_http_finish, this, &HttpMgr::slot_http_finish);
+}
 
 void HttpMgr::slot_http_finish(ReqId id, QString res, ErrorCodes err, Modules mod)
 {
-
+    if (mod == Modules::REGISTERMOD){
+        emit sig_reg_mod_finish(id, res, err);
+    }
 }
 
 void HttpMgr::PostHttpReq(QUrl url, QJsonObject json, ReqId req_id, Modules mod)
